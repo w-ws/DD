@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手风琴</title>
+    <style>
+        body , ul {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+    .wrapper {
+        width: 500px;
+        height: 600px;
+        margin: 0 auto;
+    }
+    .wrapper ul {
+        width: 100%;
+        height: 100%;
+    }
+    .wrapper ul li {
+        width: 100%;
+        height: 15%;
+        box-sizing: border-box;
+        border: 1px solid black;
+        border-bottom: transparent;
+    }
+    .wrapper ul li:last-of-type{
+        border-bottom: 1px solid black;
+    }
+    .wrapper ul li.active {
+        height: 40%;
+    }
+    .pink {
+        background-color: pink;
+    }
+    .green {
+        background-color: green;
+    }
+    .red {
+        background-color: red;
+    }
+    .orange {
+        background-color: orange;
+    }
+    .yellow {
+        background-color: yellow;
+    }
+    </style>
+    <script src="./jquery/jquery-3.4.1.js"></script>
+    <script>
+        $(function(){
+            $(".wrapper ul li").mouseenter(function(){
+                $(this).addClass("active").siblings().removeClass("active")
+            })
+           
+        })
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <ul>
+            <li class="pink"></li>
+            <li class="green"></li>
+            <li class="active red"></li>
+            <li class="orange"></li>
+            <li class="yellow"></li>
+        </ul>
+    </div>
+</body>
+</html>
